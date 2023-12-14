@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h4,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ajoutez vos styles CSS ici */
+        .actualite-container {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .actualite-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .actualite-description {
+            font-size: 1.4em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .actualite-date {
+            font-size: 1em;
+            color: #888;
+        }
+
+        .add-news-button {
+            display: block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .add-news-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <title>Page d'accueil</title>
+</head>
+
+<body>
+    <a class="add-news-button" href="/add">Ajouter une actualité</a>
+
+    {{#each actualites}}
+    <div class="actualite-container">
+        <h1 class="actualite-title">{{titre}}</h1>
+        <p class="actualite-description">{{description}}</p>
+        <h4 class="actualite-date">Date: {{date_publication}}</h4>
+    </div>
+    {{/each}}
+</body>
+
+</html>
